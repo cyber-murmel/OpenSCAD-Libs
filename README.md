@@ -28,3 +28,15 @@ meandering(n=6, ri=5, w=5, pp=40);
 translate([50, 0])
   meandering_stress_relief(n=5, ri=6, w=5, pp=40);
 ```
+
+## Screw
+![SCrew](../assets/screw.png)
+```scad
+include <screw.scad>
+
+$fn=60;
+
+metric_hex_screw();
+translate([25, 0])
+  metric_hex_nut();
+```

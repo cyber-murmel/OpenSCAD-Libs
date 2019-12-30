@@ -35,16 +35,17 @@ module metric_hex_screw(diameter=10, pitch=1.5, length=15, key=17, height=4.5, t
         metric_screw(diameter, pitch, length, tolerance);
     translate([0, 0, 0.5])minkowski(){
         cylinder(d=key/cos(30), h=height-1, $fn=6);
-        sphere(0.5, center=true);
+        sphere(0.5);
     }
 }
 
 module metric_hex_nut(diameter=10, pitch=1.5, key=17, height=4.5, tolerance=1){
 	metric_nut(diameter, pitch, height, tolerance);
 	difference(){
-		translate([0, 0, 0.5])minkowski(){
-			cylinder(d=key/cos(30), h=height-1, $fn=6);
-			sphere(0.5, center=true);
+		translate([0, 0, 0.5])
+      minkowski(){
+        cylinder(d=key/cos(30), h=height-1, $fn=6);
+        sphere(0.5);
 		}
 		cylinder(d=diameter, h=height);
 	}
